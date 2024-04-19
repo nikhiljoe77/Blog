@@ -1,0 +1,28 @@
+.myform{
+    
+    text-align: left;
+} 
+.form-label{
+    color: white;
+    
+}
+.buttonclass{
+    display:flex;
+    justify-content: space-around;
+
+}
+.buttonclass button{
+    background-color: red;
+}
+ .modal-header{
+        background-image:url(../../assets/pattern.jpg);
+        color:white
+    }
+ .modal-content{
+        background-image:url(../../assets/pattern.jpg);
+        color:white
+    }
+ .btn-close{
+        background-color: white;
+    }
+    

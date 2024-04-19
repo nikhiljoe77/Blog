@@ -1,0 +1,23 @@
+.post{
+    display:flex;
+    margin-top: 100px;
+    gap:150px;
+    &:nth-child(2n+1)
+    {
+        flex-direction: row-reverse;
+    }
+
+}
+.posts img{
+    width:500px;
+    height:500px;
+    object-fit: cover;
+    
+}
+.posts{
+    display:flex;
+    flex-direction: column;
+   
+    margin-top: 50px;
+}
+

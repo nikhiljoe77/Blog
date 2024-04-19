@@ -1,0 +1,48 @@
+.content{
+    display:flex;
+    flex-direction: column;
+    text-align: start;
+    width: 700px;
+    
+   
+}
+.editorContainer{
+    height:200px;
+}
+.add{
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
+    height:500px;
+    
+}
+.menu{
+    display:flex;
+    flex-direction:column;
+    margin-left: 100px;
+    gap:40px;
+}
+input{
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+.editor{
+    height:300px;
+    overflow:scroll;
+    width: 700px;
+}
+#save{
+    background-color: lightgray;
+    margin-right: 20px;
+}
+#update{
+    background-color: lightgray;
+}
+.item{
+    border: 1px solid lightgray;
+    text-align: start;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}

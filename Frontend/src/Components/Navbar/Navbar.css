@@ -1,0 +1,117 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    
+    padding:16 px ;
+    
+    
+     background-color: white;
+     
+    
+}
+.nav-logo{
+    display:flex;
+    align-items: center;
+   
+   
+}
+.nav-logo img{
+    display:flex;
+    align-items: center;
+    height: 100px;
+}
+.nav-logo p{
+  
+    font-size: 38px;
+    font-weight:900;
+    
+}
+.nav-menu{
+    display:flex;
+    align-items: center;
+    list-style: none;
+    gap:50px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 50px;
+}
+.nav-menu li {
+   
+    cursor:pointer;
+   
+
+}
+.nav-menu hr {
+    border:none;
+    width:80%;
+    height:6px;
+    border-radius:10px;
+    background: red;
+    
+   
+
+}
+.nav-login-cart{
+    display:flex;
+    align-items: center;
+    gap:50px;
+    
+}
+.btn btn-primary{
+    border-style:solid;
+    border-color: black;
+   width: 157px;
+    height: 40px;
+}
+.nav-cart-count{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    display:flex;
+    justify-content: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+    background-color: red;
+    color: white;
+    
+    
+}
+#writebutton{
+    display:flex;
+    border-radius: 50%;
+    width:45px;
+    height:45px;
+    justify-content: center;
+    align-items: center;
+   
+}
+#writebutton >a{
+    
+    color:white
+}
+#logoutbutton{
+    display:flex;
+    
+    width:60px;
+    height:45px;
+    justify-content: center;
+    align-items: center;
+   
+}
+#logoutbutton >a{
+    
+    color:white
+}
+#identity{
+    font-weight: 700;
+}
+span{
+    font-weight: 700;
+    
+}
+span:hover{
+    cursor: pointer;
+}
