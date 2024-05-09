@@ -27,7 +27,7 @@ export default function Home() {
           return (
             <div className="post" key={post.id}>
               <div className="img">
-                <img src={post.image} alt="post image" />
+              <img src={`.././public/Upload/${post?.image}`}alt="post image" />
               </div>
               <div className="content">
                 <Link classname="link" to={`/post/${post.id}`}>

@@ -1,6 +1,6 @@
 import "./Single.css";
 import pattern from "../assets/pattern.jpg";
-import { useLocation,useNavigate } from "react-router-dom";
+import { useLocation,useNavigate,Link } from "react-router-dom";
 import { useState,useEffect,useContext } from "react";
 import moment from "moment"
 import { AuthContext } from "../context/authContext";
@@ -29,7 +29,7 @@ useEffect(() => {
 },[postId]);
 async function handleDelete(){
   try {
-    const res = await axios.delete(`http://localhost:8800/post/deletepost/${postId}`);
+    const res = await axios.delete(`http://localhost:8800/post/deletepost/${postId}`,{withCredentials: true});
     console.log(res)
     navigate("/home")
   } catch (err) {
@@ -40,6 +40,7 @@ async function handleDelete(){
 console.log(currentUser.currentUser.name)
 console.log(currentUser.name)
 console.log(post.User?.name)
+console.log(post?.image)
 if(post.User?.name===currentUser.name)
 console.log("harpy")
 else
@@ -49,13 +50,14 @@ else
   console.log(typeof(post.User?.name))
 
 }
-
+console.log("../../public/Upload")
 
   return (
    
     <div className="single">
       <div className="blogimage">
-        <img src={post.image} alt="disappearing"/>
+        <img src={`.././public/Upload/${post?.image}`} alt="disappearing"/>
+       
        
       </div>
       <div className="blogwriter">
@@ -65,14 +67,19 @@ else
             <p style={{ fontWeight: "bold" }}>{post.name}</p>
             <p>{moment(post.date).fromNow()} </p>
           </div>
-          {currentUser.currentUser.name===post.User?.name &&(<div className="editbuttons">
-            <button id="editbutton">
+          {/* {currentUser.currentUser.name===post.User?.name &&( */}
+          <div className="editbuttons">
+          <Link to={`/write?edit`} state={post}>
+          <button id="editbutton">
               <ion-icon name="create-outline"></ion-icon>
             </button>
+          </Link>
+           
             <button id="deletebutton">
               <ion-icon name="trash-outline" onClick={handleDelete}></ion-icon>
             </button>
-          </div>)}
+          </div>
+          {/* )} */}
         </div>
         <div className="blogcontent"><h1>{post.title}</h1>
                 <p>{post.desc}</p></div>

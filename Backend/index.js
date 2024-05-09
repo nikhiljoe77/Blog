@@ -8,6 +8,8 @@ const cookieparser =require("cookie-parser");
 const Post = require ("./models/posts.js");
 const User = require('./models/users.js');
 const app = express();
+const multer=require("multer")
+// const upload=multer({dest:'./uploads/'})
 
 
 app.use(express.json());
@@ -21,6 +23,25 @@ Post.belongsTo(User)
 app.use("/auth", authroutes);
 app.use("/post", postroutes);
 app.use("/user", userroutes);
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    // cb(null, './upload')
+    cb(null, "../frontend/public/upload");
+  },
+  filename: function (req, file, cb) {
+
+    cb(null, Date.now() + file.originalname)
+  }
+})
+
+const upload = multer({ storage: storage })
+app.post('/upload', upload.single('file'), function (req, res,) {
+  // req.file is the `avatar` file
+  // req.body will hold the text fields, if there were any
+  const file=req.file
+  console.log("hi multerers")
+  res.status(200).json(file.filename)
+})
 
 
 

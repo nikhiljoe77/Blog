@@ -1,10 +1,13 @@
 import { createContext, useState,useEffect } from "react";
+
+
 import axios from "axios";
 export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(localStorage.getItem("user")) || null
   );
+  
 
 const login = async (inputs) => {
   const res = await axios.post("http://localhost:8800/auth/login", inputs, {
@@ -19,9 +22,11 @@ const login = async (inputs) => {
   {currentUser}
 };
 const logout = async (inputs) => {
+  // const navigate=useNavigate()
   const res = await axios.post("http://localhost:8800/auth/logout", {},{withCredentials: true});
   console.log(res)
   setCurrentUser(null);
+ 
 };
 useEffect(() => {
   localStorage.setItem("user", JSON.stringify(currentUser));
